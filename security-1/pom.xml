@@ -9,10 +9,10 @@
 	</parent>
 	
 
-	<artifactId>security-1</artifactId>
+	<artifactId>security</artifactId>
 
 
-	<name>security-1</name>
+	<name>security</name>
 	<description>Jhola Ecommerce Web Application</description>
 	
 	<properties>
