@@ -34,7 +34,7 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-			
+						
 		</dependencies>
 
 	</dependencyManagement>
@@ -46,6 +46,23 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		
+			<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
 	
 		</dependencies>
 
@@ -56,6 +73,7 @@
 		<module>email-microservices</module>
 		<module>payment-gateway</module>
 		<module>security-1</module>
+		<module>product</module>
 	</modules>
 
 </project>
