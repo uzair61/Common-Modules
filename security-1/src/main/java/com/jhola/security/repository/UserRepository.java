@@ -1,4 +1,4 @@
-package com.jhola.security.repo;
+package com.jhola.security.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

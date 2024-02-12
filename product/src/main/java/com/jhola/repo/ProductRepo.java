@@ -12,5 +12,6 @@ import com.jhola.model.Product;
 public interface ProductRepo extends CrudRepository<Product , Long>{
 	
 	public List<Product> findProductByCategory(Categories category);
+	
 
 }

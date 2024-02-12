@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.jhola.security.model.User;
-import com.jhola.security.repo.UserRepository;
+import com.jhola.security.repository.UserRepository;
 
 
 @Service

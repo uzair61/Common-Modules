@@ -1,15 +1,18 @@
 package com.jhola.security.service;
 
 
+import java.util.Collection;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.jhola.security.dto.UserDTO;
 import com.jhola.security.exception.UsernameAlreadyExistsException;
 import com.jhola.security.model.User;
-import com.jhola.security.repo.UserRepository;
+import com.jhola.security.repository.UserRepository;
 
 
 @Service
@@ -23,6 +26,17 @@ public class UserService {
 
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
+    
+    public void initRole(){
+    	
+    	UserDTO adminUser = new UserDTO();
+    	adminUser.setUsername("Admin@gmail.com");
+    	adminUser.setFullName("Admin");
+    	adminUser.setPassword("Admin123");
+    	adminUser.setConfirmPassword("Admin123");
+    	saveUser(adminUser);
+    		
+    }
 
     public User saveUser (UserDTO newUser){
 

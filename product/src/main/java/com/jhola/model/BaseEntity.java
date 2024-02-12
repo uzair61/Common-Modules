@@ -9,7 +9,8 @@ public class BaseEntity {
 	public String createdAt;
 	
 	public String updatedAt;
-
+	
+	
 	public boolean isDeleted() {
 		return isDeleted;
 	}

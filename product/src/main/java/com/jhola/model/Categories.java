@@ -5,6 +5,6 @@ public enum Categories {
 	Laptop,
 	Mobile,
 	Tablet,
-	Headphones
+	Headphone
 
 }

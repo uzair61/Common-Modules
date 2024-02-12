@@ -1,5 +1,6 @@
 package com.jhola.security.controller;
 
+import javax.annotation.PostConstruct;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jhola.security.config.JwtTokenProvider;
-import com.jhola.security.config.SecurityConstants;
+import com.jhola.security.configuration.JwtTokenProvider;
+import com.jhola.security.configuration.SecurityConstants;
 import com.jhola.security.dto.JWTLoginSucessReponse;
 import com.jhola.security.dto.LoginRequest;
 import com.jhola.security.dto.UserDTO;
@@ -39,6 +40,11 @@ public class UserController {
 
     @Autowired
     private AuthenticationManager authenticationManager;
+    
+    @PostConstruct
+    public void initRoleAndUser() {
+        userService.initRole();
+    }
 
     @CrossOrigin
     @PostMapping("/login")

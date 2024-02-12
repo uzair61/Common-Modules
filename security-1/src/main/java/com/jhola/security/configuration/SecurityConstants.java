@@ -1,4 +1,4 @@
-package com.jhola.security.config;
+package com.jhola.security.configuration;
 
 public class SecurityConstants {
 
