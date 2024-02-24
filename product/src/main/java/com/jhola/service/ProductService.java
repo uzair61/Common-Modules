@@ -41,6 +41,7 @@ public class ProductService {
 		List<ProductDTO> listOfProducts = new ArrayList<ProductDTO>();
 		Iterable<Product> allProducts = repo.findAll();
 		allProducts.forEach( (products) -> {
+			if (products.isDeleted() == false)
 			listOfProducts.add(mapper.map(products, ProductDTO.class));
 		    });
 		return listOfProducts;
@@ -72,8 +73,10 @@ public class ProductService {
 		List<Product> listOfProducts = repo.findProductByCategory(Categories.valueOf(category));
 		List<ProductDTO> listOfProductsDTO = new ArrayList<>();
 		for ( Product product : listOfProducts) {
+			if (product.isDeleted() == false){
 			ProductDTO productDTO = mapper.map(product, ProductDTO.class);
 			listOfProductsDTO.add(productDTO);
+			}
 		}
 		return listOfProductsDTO;
 	}

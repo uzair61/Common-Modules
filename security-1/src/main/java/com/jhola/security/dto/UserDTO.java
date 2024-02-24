@@ -14,8 +14,6 @@ public class UserDTO implements Serializable{
 	
 	private static final long serialVersionUID = -4982668184925760055L;
 
-	private Long id;
-
 	@Email(message = "Username needs to be an email")
 	@NotBlank(message = "username is required")
 	private String username;
@@ -27,20 +25,8 @@ public class UserDTO implements Serializable{
 	private String password;
 
 	private String confirmPassword;
-	
-	private Date create_At;
-	
-	private Date update_At;
 
 	public UserDTO() {
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getUsername() {
@@ -75,31 +61,7 @@ public class UserDTO implements Serializable{
 		this.confirmPassword = confirmPassword;
 	}
 
-	public Date getCreate_At() {
-		return create_At;
-	}
 
-	public void setCreate_At(Date create_At) {
-		this.create_At = create_At;
-	}
-
-	public Date getUpdate_At() {
-		return update_At;
-	}
-
-	public void setUpdate_At(Date update_At) {
-		this.update_At = update_At;
-	}
-
-	@PrePersist
-	protected void onCreate() {
-		this.create_At = new Date();
-	}
-
-	@PreUpdate
-	protected void onUpdate() {
-		this.update_At = new Date();
-	}
 
 	
 }

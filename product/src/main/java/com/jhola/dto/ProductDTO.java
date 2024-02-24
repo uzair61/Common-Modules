@@ -3,11 +3,12 @@ package com.jhola.dto;
 
 
 import java.io.Serializable;
+import java.util.Set;
 
-import com.jhola.model.BaseEntity;
 import com.jhola.model.Categories;
+import com.jhola.model.Images;
 
-public class ProductDTO extends BaseEntity implements Serializable{
+public class ProductDTO implements Serializable{
 
 	
 	private static final long serialVersionUID = 404987189608886285L;
@@ -20,7 +21,15 @@ public class ProductDTO extends BaseEntity implements Serializable{
 
 	private Long price;
 
+    private Set<Images> productImages;
 
+	public Set<Images> getProductImages() {
+		return productImages;
+	}
+
+	public void setProductImages(Set<Images> productImages) {
+		this.productImages = productImages;
+	}
 
 	public Categories getCategory() {
 		return category;
@@ -56,8 +65,8 @@ public class ProductDTO extends BaseEntity implements Serializable{
 
 	@Override
 	public String toString() {
-		return "ProductDTO [productId=" + ", category=" + category + ", name=" + name + ", description="
-				+ description + ", price=" + price + ", isDeleted=" + "]";
+		return "ProductDTO [category=" + category + ", name=" + name + ", description=" + description + ", price="
+				+ price + ", productImages=" + productImages + "]";
 	}
 
     
